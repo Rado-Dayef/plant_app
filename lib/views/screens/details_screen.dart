@@ -70,9 +70,10 @@ class DetailsScreen extends GetWidget<DetailsController> {
             SliverToBoxAdapter(
               child: Container(
                 height: 290.h,
-                padding: EdgeInsets.symmetric(
-                  vertical: 10.h,
-                  horizontal: 20.w,
+                padding: EdgeInsets.only(
+                  right: 20.w,
+                  bottom: 10.h,
+                  left: 20.w,
                 ),
                 decoration: BoxDecoration(
                   color: AppColors.whiteColor,
@@ -220,20 +221,23 @@ class DetailsScreen extends GetWidget<DetailsController> {
                       ),
                       const GapWidget(5),
                       Center(
-                        child: Container(
-                          height: 50.h,
-                          width: 300.w,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            color: AppColors.greenColor,
-                            borderRadius: BorderRadius.circular(50.sp),
-                          ),
-                          child: Text(
-                            AppStrings.buyNowText,
-                            style: AppFonts.font20Black.copyWith(
-                              color: AppColors.whiteColor,
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.bold,
+                        child: InkWell(
+                          onTap: controller.onBuyNowClick,
+                          child: Container(
+                            height: 50.h,
+                            width: 300.w,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: AppColors.greenColor,
+                              borderRadius: BorderRadius.circular(50.sp),
+                            ),
+                            child: Text(
+                              AppStrings.buyNowText,
+                              style: AppFonts.font20Black.copyWith(
+                                color: AppColors.whiteColor,
+                                fontSize: 24.sp,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),

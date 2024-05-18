@@ -3,6 +3,7 @@ class AppStrings {
   static const String appTitle = "Plants";
 
   /// App Routes.
+  static const String cartRoute = "/cart";
   static const String homeRoute = "/home";
   static const String detailsRoute = "/details";
 
@@ -43,6 +44,7 @@ class AppStrings {
   /// App Texts.
   static const String allText = "All";
   static const String jadeText = "Jade";
+  static const String cartText = "Cart";
   static const String radoText = "Rado";
   static const String otherText = "Other";
   static const String cairoText = "Cairo";

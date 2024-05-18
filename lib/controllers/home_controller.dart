@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:plants_app/constants/app_imports.dart';
 
 class HomeController extends GetxController {

@@ -8,6 +8,11 @@ class AppPages {
       transition: Transition.noTransition,
     ),
     GetPage(
+      name: AppStrings.cartRoute,
+      page: () => const CartScreen(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
       name: AppStrings.detailsRoute,
       page: () => const DetailsScreen(),
       transition: Transition.noTransition,

@@ -8,6 +8,10 @@ class AppBindings extends Bindings {
       fenix: true,
     );
     Get.lazyPut(
+      () => CartController(),
+      fenix: true,
+    );
+    Get.lazyPut(
       () => DetailsController(),
       fenix: true,
     );

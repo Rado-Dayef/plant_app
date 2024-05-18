@@ -22,4 +22,9 @@ class DetailsController extends GetxController {
     count.value == 1 ? AppDefaults.defaultToast(AppStrings.countCanNotBeLessThenOneToast) : count.value--;
     totalPrice.value = count.value * plantFromArguments.price;
   }
+
+  /// To navigate from the details screen to the cart screen.
+  void onBuyNowClick() {
+    Get.toNamed(AppStrings.cartRoute, arguments: [plantFromArguments, count, totalPrice]);
+  }
 }

@@ -17,21 +17,21 @@
     "image": "assets/images/philodendronImage.png",
     "title": "Philodendron",
     "isFav": false,
-    "price": 30.95,
+    "price": 30.50,
     "star": 3.8
   },
   {
     "image": "assets/images/monsteraImage.png",
     "title": "Monstera",
     "isFav": true,
-    "price": 35.55,
+    "price": 35.25,
     "star": 3.4
   },
   {
     "image": "assets/images/aloeVeraImage.png",
     "title": "Aloe Vera",
     "isFav": true,
-    "price": 20.35,
+    "price": 20.50,
     "star": 4.9
   },
   {
