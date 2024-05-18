@@ -11,13 +11,13 @@ class DetailsController extends GetxController {
     super.onInit();
   }
 
-  /// To increment the count with one.
+  /// To increment the count with one and multiply it with the price.
   void onPlusOneToCount() {
     count.value++;
     totalPrice.value = count.value * plantFromArguments.price;
   }
 
-  /// To decrement the count with one if its not equal one or less, But if the count equal one or less display toast to worn the user.
+  /// To decrement the count with one and multiply it with the price if its not equal one or less, But if the count equal one or less display toast to worn the user.
   void onMinusOneFromCount() {
     count.value == 1 ? AppDefaults.defaultToast(AppStrings.countCanNotBeLessThenOneToast) : count.value--;
     totalPrice.value = count.value * plantFromArguments.price;
