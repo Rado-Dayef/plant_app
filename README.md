@@ -1,11 +1,12 @@
 # Plants App
 
-This Flutter project is a plants app consisting of two main screens: **Home**, **Details**, and **Cart**. The app utilizes the GetX state management library and follows the MVC (Model-View-Controller) architecture for efficient organization and management of code.
+This Flutter project is a plants app consisting of four main screens: **Home**, **Details**, **Favorite**, and **Cart**. The app utilizes the GetX state management library and follows the MVC (Model-View-Controller) architecture for efficient organization and management of code.
 
 ## Screens:
-- Home: [Home Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/01829044-d56b-45ae-9acc-7b389ae18255)
-- Details: [Details Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/b23536f7-7b23-4b61-9bba-ead4f62a020a)
-- Cart: [Cart Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/1f2b1b82-a216-4047-86b2-0a52c429bfa9)
+- Home: [Home Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/2dae16ac-8932-4634-8546-b28f0e0ffc7a)
+- Details: [Details Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/3437e053-960c-4335-b2b7-dbc662c51612)
+- Favorite: [Favorite Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/57b1b801-f9de-4b67-9926-0872209f2621)
+- Cart: [Cart Screen](https://github.com/Rado-Dayef/plants_app/assets/121133001/b6ab2fd0-a9a2-4d39-aeff-6f31214bf049)
 
 ## Technologies Used:
 - Flutter.
