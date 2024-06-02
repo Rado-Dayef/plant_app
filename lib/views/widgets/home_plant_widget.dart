@@ -2,8 +2,13 @@ import 'package:plants_app/constants/app_imports.dart';
 
 class HomePlantWidget extends StatelessWidget {
   final PlantModel plant;
+  final NavBarController navBarController;
 
-  const HomePlantWidget(this.plant, {super.key});
+  const HomePlantWidget(
+    this.plant, {
+    required this.navBarController,
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,23 +28,6 @@ class HomePlantWidget extends StatelessWidget {
         child: Stack(
           alignment: Alignment.topRight,
           children: [
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 10.w,
-              ),
-              child: InkWell(
-                onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
-                child: CircleAvatar(
-                  radius: 15.sp,
-                  backgroundColor: AppColors.secLightGreenColor,
-                  child: Icon(
-                    Icons.favorite,
-                    size: 18.sp,
-                    color: plant.isFav ? AppColors.redColor : AppColors.whiteColor,
-                  ),
-                ),
-              ),
-            ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,13 +76,17 @@ class HomePlantWidget extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                        onTap: () => navBarController.checkAndAddToCartPlantListOrDeleteFromCartPlantList(plant),
                         child: CircleAvatar(
                           backgroundColor: AppColors.secLightGreenColor,
                           radius: 15.sp,
-                          child: const Icon(
-                            Icons.add,
-                            color: AppColors.whiteColor,
+                          child: Obx(
+                            () {
+                              return Icon(
+                                plant.inCart.value ? Icons.delete_outline : Icons.add,
+                                color: AppColors.whiteColor,
+                              );
+                            },
                           ),
                         ),
                       ),
@@ -102,6 +94,27 @@ class HomePlantWidget extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: 10.w,
+              ),
+              child: InkWell(
+                onTap: () => navBarController.checkAndAddToFavPlantListOrDeleteFromFavPlantList(plant),
+                child: CircleAvatar(
+                  radius: 15.sp,
+                  backgroundColor: AppColors.secLightGreenColor,
+                  child: Obx(
+                    () {
+                      return Icon(
+                        Icons.favorite,
+                        size: 18.sp,
+                        color: plant.isFav.value ? AppColors.redColor : AppColors.whiteColor,
+                      );
+                    },
+                  ),
+                ),
+              ),
             ),
           ],
         ),

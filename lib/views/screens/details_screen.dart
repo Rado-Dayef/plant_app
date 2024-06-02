@@ -1,10 +1,12 @@
 import 'package:plants_app/constants/app_imports.dart';
 
-class DetailsScreen extends GetWidget<DetailsController> {
+class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    PlantModel plantFromArguments = Get.arguments;
+    NavBarController navBarController = Get.find();
     return Scaffold(
       backgroundColor: AppColors.lightGreenColor,
       body: SafeArea(
@@ -24,9 +26,9 @@ class DetailsScreen extends GetWidget<DetailsController> {
                   children: [
                     Center(
                       child: Hero(
-                        tag: controller.plantFromArguments.image,
+                        tag: plantFromArguments.image,
                         child: Image.asset(
-                          controller.plantFromArguments.image,
+                          plantFromArguments.image,
                         ),
                       ),
                     ),
@@ -50,13 +52,17 @@ class DetailsScreen extends GetWidget<DetailsController> {
                             ),
                           ),
                           InkWell(
-                            onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                            onTap: () => navBarController.checkAndAddToFavPlantListOrDeleteFromFavPlantList(plantFromArguments),
                             child: CircleAvatar(
                               backgroundColor: AppColors.secLightGreenColor,
-                              child: Icon(
-                                Icons.favorite,
-                                color: controller.plantFromArguments.isFav ? AppColors.redColor : AppColors.whiteColor,
-                                size: 20.sp,
+                              child: Obx(
+                                () {
+                                  return Icon(
+                                    Icons.favorite,
+                                    color: plantFromArguments.isFav.value ? AppColors.redColor : AppColors.whiteColor,
+                                    size: 20.sp,
+                                  );
+                                },
                               ),
                             ),
                           ),
@@ -92,7 +98,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                controller.plantFromArguments.title,
+                                plantFromArguments.title,
                                 style: AppFonts.font20Black.copyWith(
                                   fontSize: 30.sp,
                                   fontWeight: FontWeight.bold,
@@ -101,7 +107,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                               Obx(
                                 () {
                                   return Text(
-                                    AppStrings.dollarSign + AppStrings.spaceSign + controller.totalPrice.value.toString(),
+                                    AppStrings.dollarSign + AppStrings.spaceSign + (plantFromArguments.count.value * plantFromArguments.price).toString(),
                                     style: AppFonts.font20Black.copyWith(
                                       color: AppColors.greenColor,
                                       fontSize: 24.sp,
@@ -120,7 +126,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                                   ),
                                   const GapWidget(5),
                                   Text(
-                                    controller.plantFromArguments.star.toString(),
+                                    plantFromArguments.star.toString(),
                                     style: AppFonts.font20Black.copyWith(
                                       fontSize: 18.sp,
                                       fontWeight: FontWeight.bold,
@@ -149,7 +155,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 InkWell(
-                                  onTap: controller.onMinusOneFromCount,
+                                  onTap: () => navBarController.onMinusOneFromTheCountOfThePlantItem(plantFromArguments),
                                   child: Container(
                                     height: 30.sp,
                                     width: 30.sp,
@@ -171,7 +177,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                                 Obx(
                                   () {
                                     return Text(
-                                      controller.count.value.toString(),
+                                      plantFromArguments.count.value.toString(),
                                       style: AppFonts.font20Black.copyWith(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 24.sp,
@@ -181,7 +187,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                                 ),
                                 const GapWidget(10),
                                 InkWell(
-                                  onTap: controller.onPlusOneToCount,
+                                  onTap: () => navBarController.onPlusOneToTheCountOfThePlantItem(plantFromArguments),
                                   child: Container(
                                     height: 30.sp,
                                     width: 30.sp,
@@ -222,7 +228,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                       const GapWidget(5),
                       Center(
                         child: InkWell(
-                          onTap: controller.onBuyNowClick,
+                          onTap: () => navBarController.checkAndAddToCartPlantListOrDeleteFromCartPlantList(plantFromArguments),
                           child: Container(
                             height: 50.h,
                             width: 300.w,
@@ -231,13 +237,17 @@ class DetailsScreen extends GetWidget<DetailsController> {
                               color: AppColors.greenColor,
                               borderRadius: BorderRadius.circular(50.sp),
                             ),
-                            child: Text(
-                              AppStrings.buyNowText,
-                              style: AppFonts.font20Black.copyWith(
-                                color: AppColors.whiteColor,
-                                fontSize: 24.sp,
-                                fontWeight: FontWeight.bold,
-                              ),
+                            child: Obx(
+                              () {
+                                return Text(
+                                  plantFromArguments.inCart.value ? AppStrings.removeFromCartText : AppStrings.addToCartText,
+                                  style: AppFonts.font20Black.copyWith(
+                                    color: AppColors.whiteColor,
+                                    fontSize: 24.sp,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                );
+                              },
                             ),
                           ),
                         ),

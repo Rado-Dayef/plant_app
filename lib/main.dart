@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
           ),
           initialBinding: AppBindings(),
           getPages: AppPages.appPages,
-          initialRoute: AppStrings.homeRoute,
+          initialRoute: AppStrings.navBarRoute,
         );
       },
     );

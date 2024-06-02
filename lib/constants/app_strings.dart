@@ -3,27 +3,15 @@ class AppStrings {
   static const String appTitle = "Plants";
 
   /// App Routes.
-  static const String cartRoute = "/cart";
-  static const String homeRoute = "/home";
+  static const String navBarRoute = "/navBar";
   static const String detailsRoute = "/details";
 
   /// App Signs.
   static const String plusSign = "+";
   static const String comaSign = ",";
   static const String spaceSign = " ";
-  static const String colonSign = ":";
   static const String minusSign = "-";
   static const String dollarSign = "\$";
-
-  /// App JSON Texts.
-  static const String starJSONText = "star";
-  static const String imageJSONText = "image";
-  static const String titleJSONText = "title";
-  static const String isFavJSONText = "isFav";
-  static const String priceJSONText = "price";
-
-  /// App JSONs.
-  static const String plantJSON = "assets/jsons/plantJSON.json";
 
   /// App Images.
   static const String myImage = "assets/images/myImage.jpeg";
@@ -33,9 +21,6 @@ class AppStrings {
   static const String monsteraImage = "assets/images/monsteraImage.png";
   static const String aloeVeraImage = "assets/images/aloeVeraImage.png";
   static const String philodendronImage = "assets/images/philodendronImage.png";
-
-  /// App Fonts.
-  static const String timesFont = "Times";
 
   /// App Toasts.
   static const String countCanNotBeLessThenOneToast = "Count can't be less then one.";
@@ -54,6 +39,8 @@ class AppStrings {
   static const String buyNowText = "Buy Now!";
   static const String outdoorText = "Outdoor";
   static const String welcomeText = "Welcome";
+  static const String profileText = "Profile";
+  static const String favoriteText = "Favorite";
   static const String categoryText = "Category";
   static const String monsteraText = "Monstera";
   static const String newCairoText = "New Cairo";
@@ -61,6 +48,10 @@ class AppStrings {
   static const String aboutPlantText = "About Plant";
   static const String getStartedText = "Get Started";
   static const String searchHereText = "Search Here";
+  static const String addToCartText = "Add To Cart!";
   static const String philodendronText = "Philodendron";
+  static const String removeFromCartText = "Remove From Cart!";
+  static const String noFavoriteItemsYetText = "No favorite items yet";
+  static const String noItemsInYourCartText = "No items in your cart yet";
   static const String plantDetailsText = "Plants are incredible organisms that play a vital role in sustaining life on Earth. They come in a vast array of shapes, sizes, and colors, each adapted to thrive in specific environments. From towering trees in dense forests to tiny mosses clinging to rocks, plants exhibit remarkable diversity.";
 }

@@ -10,7 +10,6 @@ dependencies:
     sdk: flutter
 
   get: ^4.6.6
-  shimmer: ^3.0.0
   fluttertoast: ^8.2.5
   cupertino_icons: ^1.0.6
   flutter_screenutil: ^5.9.0
@@ -33,5 +32,4 @@ flutter:
 
   assets:
     - assets/
-    - assets/jsons/
     - assets/images/

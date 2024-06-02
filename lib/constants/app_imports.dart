@@ -1,5 +1,3 @@
-export 'dart:convert';
-
 export 'package:flutter/material.dart';
 export 'package:flutter/services.dart';
 export 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -11,17 +9,18 @@ export 'package:plants_app/constants/app_colors.dart';
 export 'package:plants_app/constants/app_defaults.dart';
 export 'package:plants_app/constants/app_fonts.dart';
 export 'package:plants_app/constants/app_pages.dart';
-export 'package:plants_app/constants/app_shimmers.dart';
 export 'package:plants_app/constants/app_strings.dart';
-export 'package:plants_app/controllers/cart_controller.dart';
-export 'package:plants_app/controllers/details_controller.dart';
 export 'package:plants_app/controllers/home_controller.dart';
+export 'package:plants_app/controllers/nav_bar_controller.dart';
 export 'package:plants_app/models/category_model.dart';
 export 'package:plants_app/models/plant_model.dart';
 export 'package:plants_app/views/screens/cart_screen.dart';
 export 'package:plants_app/views/screens/details_screen.dart';
+export 'package:plants_app/views/screens/favorite_screen.dart';
 export 'package:plants_app/views/screens/home_screen.dart';
+export 'package:plants_app/views/screens/nav_bar_screen.dart';
+export 'package:plants_app/views/screens/profile_screen.dart';
+export 'package:plants_app/views/widgets/cart_and_favorite_plant_widget.dart';
 export 'package:plants_app/views/widgets/gap_widget.dart';
 export 'package:plants_app/views/widgets/home_category_widget.dart';
 export 'package:plants_app/views/widgets/home_plant_widget.dart';
-export 'package:shimmer/shimmer.dart';
